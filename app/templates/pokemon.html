@@ -1,0 +1,46 @@
+{%extends 'base.html'%}
+
+{%block title%}
+pokemon world
+
+{%endblock%}
+
+
+{%block  styles%} 
+
+<link rel="stylesheet" href="../static/styles/pokemon.css">
+
+{%endblock%}
+
+{%block content%}
+<form method="post">
+    <div class="mb-3">
+      <label for="text" class="form-label">pokemon name or id</label>
+      <input type="text" class="form-control" id="name_or_id" name = 'name_or_id' >
+   
+    
+    
+
+      
+    </div>
+    <button type="submit" class="btn-primary">submit</button>
+  </form>
+
+  {% if pokemons %}
+  <div class="card" style="width: 20rem; background-color: #561623; margin: auto; padding-left: 50px; color: rgb(206, 28, 28); border: 3px solid rgb(142, 25, 39); font-size: 22px ;">
+    <img src="{{pokemons.sprite_url}}" class="card-img-top" alt="...">
+    <div>
+      <p >{{'name'}}:  {{pokemons.name}}<br>
+      {{'ability'}}:  {{pokemons.ability}}<br>
+      {{'base_experience'}}: {{pokemons.base_experience}}</p>
+      
+    </div>
+  </div>
+ 
+  
+  
+
+
+  {%endif%}
+
+{%endblock%}
